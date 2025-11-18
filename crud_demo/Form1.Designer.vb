@@ -22,10 +22,108 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.ButtonConnect = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBoxAge = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBoxEmail = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ButtonInsert = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'ButtonConnect
+        '
+        Me.ButtonConnect.Location = New System.Drawing.Point(238, 12)
+        Me.ButtonConnect.Name = "ButtonConnect"
+        Me.ButtonConnect.Size = New System.Drawing.Size(344, 178)
+        Me.ButtonConnect.TabIndex = 0
+        Me.ButtonConnect.Text = "Connect MySQL"
+        Me.ButtonConnect.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(237, 244)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(29, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Age:"
+        '
+        'TextBoxAge
+        '
+        Me.TextBoxAge.Location = New System.Drawing.Point(276, 241)
+        Me.TextBoxAge.Name = "TextBoxAge"
+        Me.TextBoxAge.Size = New System.Drawing.Size(288, 20)
+        Me.TextBoxAge.TabIndex = 2
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(276, 215)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(288, 20)
+        Me.TextBox1.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(237, 215)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Name:"
+        '
+        'TextBoxEmail
+        '
+        Me.TextBoxEmail.Location = New System.Drawing.Point(276, 267)
+        Me.TextBoxEmail.Name = "TextBoxEmail"
+        Me.TextBoxEmail.Size = New System.Drawing.Size(288, 20)
+        Me.TextBoxEmail.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(237, 270)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Email:"
+        '
+        'ButtonInsert
+        '
+        Me.ButtonInsert.Location = New System.Drawing.Point(328, 293)
+        Me.ButtonInsert.Name = "ButtonInsert"
+        Me.ButtonInsert.Size = New System.Drawing.Size(186, 56)
+        Me.ButtonInsert.TabIndex = 7
+        Me.ButtonInsert.Text = "CREATE (Insert Data)"
+        Me.ButtonInsert.UseVisualStyleBackColor = True
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ButtonInsert)
+        Me.Controls.Add(Me.TextBoxEmail)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBoxAge)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ButtonConnect)
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
+    Friend WithEvents ButtonConnect As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBoxAge As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBoxEmail As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents ButtonInsert As Button
 End Class
