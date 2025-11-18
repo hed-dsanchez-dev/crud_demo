@@ -25,7 +25,7 @@ Partial Class Form1
         Me.ButtonConnect = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxAge = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBoxEmail = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -57,12 +57,12 @@ Partial Class Form1
         Me.TextBoxAge.Size = New System.Drawing.Size(288, 20)
         Me.TextBoxAge.TabIndex = 2
         '
-        'TextBox1
+        'TextBoxName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(276, 215)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(288, 20)
-        Me.TextBox1.TabIndex = 4
+        Me.TextBoxName.Location = New System.Drawing.Point(276, 215)
+        Me.TextBoxName.Name = "TextBoxName"
+        Me.TextBoxName.Size = New System.Drawing.Size(288, 20)
+        Me.TextBoxName.TabIndex = 4
         '
         'Label2
         '
@@ -106,7 +106,7 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonInsert)
         Me.Controls.Add(Me.TextBoxEmail)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxAge)
         Me.Controls.Add(Me.Label1)
@@ -121,7 +121,7 @@ Partial Class Form1
     Friend WithEvents ButtonConnect As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxAge As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxName As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBoxEmail As TextBox
     Friend WithEvents Label3 As Label
