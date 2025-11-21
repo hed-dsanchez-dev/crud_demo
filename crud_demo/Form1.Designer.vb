@@ -32,6 +32,8 @@ Partial Class Form1
         Me.ButtonInsert = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonUpdate = New System.Windows.Forms.Button()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -39,7 +41,7 @@ Partial Class Form1
         '
         Me.ButtonConnect.Location = New System.Drawing.Point(238, 12)
         Me.ButtonConnect.Name = "ButtonConnect"
-        Me.ButtonConnect.Size = New System.Drawing.Size(344, 91)
+        Me.ButtonConnect.Size = New System.Drawing.Size(344, 54)
         Me.ButtonConnect.TabIndex = 0
         Me.ButtonConnect.Text = "Connect MySQL"
         Me.ButtonConnect.UseVisualStyleBackColor = True
@@ -47,7 +49,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(237, 149)
+        Me.Label1.Location = New System.Drawing.Point(235, 101)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(29, 13)
         Me.Label1.TabIndex = 1
@@ -55,14 +57,14 @@ Partial Class Form1
         '
         'TextBoxAge
         '
-        Me.TextBoxAge.Location = New System.Drawing.Point(276, 146)
+        Me.TextBoxAge.Location = New System.Drawing.Point(276, 98)
         Me.TextBoxAge.Name = "TextBoxAge"
         Me.TextBoxAge.Size = New System.Drawing.Size(288, 20)
         Me.TextBoxAge.TabIndex = 2
         '
         'TextBoxName
         '
-        Me.TextBoxName.Location = New System.Drawing.Point(276, 120)
+        Me.TextBoxName.Location = New System.Drawing.Point(276, 72)
         Me.TextBoxName.Name = "TextBoxName"
         Me.TextBoxName.Size = New System.Drawing.Size(288, 20)
         Me.TextBoxName.TabIndex = 4
@@ -70,7 +72,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(232, 127)
+        Me.Label2.Location = New System.Drawing.Point(232, 75)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 3
@@ -78,7 +80,7 @@ Partial Class Form1
         '
         'TextBoxEmail
         '
-        Me.TextBoxEmail.Location = New System.Drawing.Point(276, 172)
+        Me.TextBoxEmail.Location = New System.Drawing.Point(276, 124)
         Me.TextBoxEmail.Name = "TextBoxEmail"
         Me.TextBoxEmail.Size = New System.Drawing.Size(288, 20)
         Me.TextBoxEmail.TabIndex = 6
@@ -86,7 +88,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(235, 175)
+        Me.Label3.Location = New System.Drawing.Point(237, 127)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 5
@@ -94,7 +96,7 @@ Partial Class Form1
         '
         'ButtonInsert
         '
-        Me.ButtonInsert.Location = New System.Drawing.Point(317, 198)
+        Me.ButtonInsert.Location = New System.Drawing.Point(317, 159)
         Me.ButtonInsert.Name = "ButtonInsert"
         Me.ButtonInsert.Size = New System.Drawing.Size(186, 31)
         Me.ButtonInsert.TabIndex = 7
@@ -104,25 +106,45 @@ Partial Class Form1
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(235, 272)
+        Me.DataGridView1.Location = New System.Drawing.Point(240, 314)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(344, 124)
         Me.DataGridView1.TabIndex = 8
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(317, 235)
+        Me.Button1.Location = New System.Drawing.Point(317, 196)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(186, 31)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "READ(retrive data)"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ButtonUpdate
+        '
+        Me.ButtonUpdate.Location = New System.Drawing.Point(317, 233)
+        Me.ButtonUpdate.Name = "ButtonUpdate"
+        Me.ButtonUpdate.Size = New System.Drawing.Size(186, 31)
+        Me.ButtonUpdate.TabIndex = 10
+        Me.ButtonUpdate.Text = "EDIT(Update)"
+        Me.ButtonUpdate.UseVisualStyleBackColor = True
+        '
+        'ButtonDelete
+        '
+        Me.ButtonDelete.Location = New System.Drawing.Point(317, 270)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(186, 31)
+        Me.ButtonDelete.TabIndex = 11
+        Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ButtonDelete)
+        Me.Controls.Add(Me.ButtonUpdate)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ButtonInsert)
@@ -151,4 +173,6 @@ Partial Class Form1
     Friend WithEvents ButtonInsert As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonUpdate As Button
+    Friend WithEvents ButtonDelete As Button
 End Class
