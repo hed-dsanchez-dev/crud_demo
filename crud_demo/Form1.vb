@@ -4,8 +4,6 @@ Public Class Form1
     Dim conn As MySqlConnection
     Dim COMMAND As MySqlCommand
 
-
-
     Private Sub ButtonConnect_Click(sender As Object, e As EventArgs) Handles ButtonConnect.Click
 
         conn = New MySqlConnection
@@ -20,7 +18,6 @@ Public Class Form1
         End Try
 
     End Sub
-
 
     Private Sub ButtonInsert_Click(sender As Object, e As EventArgs) Handles ButtonInsert.Click
         Dim query As String = "INSERT INTO students_tbl (name, age, email) VALUES (@name, @age, @email)"
@@ -42,13 +39,13 @@ Public Class Form1
         LoadData()
     End Sub
 
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LoadData()
     End Sub
 
     Private Sub LoadData()
-        Dim query As String = "SELECT * FROM crud_demo_db.students_tbl;"
+        Dim query As String = "SELECT id, name, age, email FROM students_tbl"
+
         Try
             Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=crud_demo_db")
                 Dim adapter As New MySqlDataAdapter(query, conn)
@@ -61,9 +58,7 @@ Public Class Form1
         End Try
     End Sub
 
-
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-
         Try
             If e.RowIndex >= 0 Then
                 Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
@@ -75,10 +70,7 @@ Public Class Form1
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
-
-
 
     Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
 
@@ -87,7 +79,12 @@ Public Class Form1
             Exit Sub
         End If
 
-        Dim selectedID As Integer = DataGridView1.CurrentRow.Cells("id").Value
+        If IsDBNull(DataGridView1.CurrentRow.Cells("id").Value) Then
+            MsgBox("ID not found for selected row.")
+            Exit Sub
+        End If
+
+        Dim selectedID As Integer = Convert.ToInt32(DataGridView1.CurrentRow.Cells("id").Value)
 
         Dim query As String = "UPDATE students_tbl SET name=@name, age=@age, email=@email WHERE id=@id"
 
@@ -97,17 +94,22 @@ Public Class Form1
                 Using cmd As New MySqlCommand(query, conn)
 
                     cmd.Parameters.AddWithValue("@id", selectedID)
-                    cmd.Parameters.AddWithValue("@name", TextBoxName.Text)
-                    cmd.Parameters.AddWithValue("@age", TextBoxAge.Text)
-                    cmd.Parameters.AddWithValue("@email", TextBoxEmail.Text)
+                    cmd.Parameters.AddWithValue("@name", TextBoxName.Text.Trim())
+                    cmd.Parameters.AddWithValue("@age", Convert.ToInt32(TextBoxAge.Text))
+                    cmd.Parameters.AddWithValue("@email", TextBoxEmail.Text.Trim())
 
-                    cmd.ExecuteNonQuery()
-                    MessageBox.Show("Record Updated Successfully")
+                    Dim rows As Integer = cmd.ExecuteNonQuery()
+
+                    If rows > 0 Then
+                        MessageBox.Show("Record Updated Successfully")
+                    Else
+                        MessageBox.Show("Update failed. Record may not exist.")
+                    End If
 
                 End Using
             End Using
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Error updating record: " & ex.Message)
         End Try
 
         LoadData()
